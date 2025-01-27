@@ -60,6 +60,6 @@ fn display_help() {
     println!("Levy Help:");
     println!("Commands:");
     println!("  help    display this help message");
-    println!("  greet --name <NAME> greeting user");
+    println!("  greet --name <NAME> greeting users");
     println!("  calculate --a <NUM> --b <NUM>   Two Number Substitution Operation");
 }
