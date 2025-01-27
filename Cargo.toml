@@ -4,9 +4,12 @@ version = "0.1.0"
 authors = ["mayendradwika <mayendradwikaprayudha@gmail.com>"]
 edition = "2021"
 description = "Simple CLI to Basic Fitur"
-repository = ""
+repository = "https://github.com/mayendra/levy"
 license = "MIT"
 
 [dependencies]
 clap = { version = "4.0", features = ["derive"] }
 
+[[bin]]
+name ="levy"
+path = "src/main.rs"
