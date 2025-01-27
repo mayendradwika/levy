@@ -44,7 +44,7 @@ fn main() {
 }
 
 fn who() {
-    println!("Hi there! My Name Is Levy, I Am a CLI Tool 👌.");
+    println!("Hi there! My Name Is Levy, I Am a CLI Tool 👌");
 }
 /// greeting function
 fn greet(name: &str) {
