@@ -9,6 +9,7 @@ struct Cli {
 
 #[derive(Subcommand)]
 enum Commands {
+    Who,
     /// Greeting user
     Greet {
         /// name
@@ -24,9 +25,6 @@ enum Commands {
         #[arg(short, long)]
         b: i32,
     },
-
-    // display help
-    Help,
 }
 
 fn main() {
@@ -39,12 +37,15 @@ fn main() {
         Commands::Calculate { a, b } => {
             calculate(a, b);
         }
-        Commands::Help => {
-            display_help();
+        Commands::Who => {
+            who();
         }
     }
 }
 
+fn who() {
+    println!("Hi there! My Name Is Levy, I Am a CLI Tool 👌.");
+}
 /// greeting function
 fn greet(name: &str) {
     println!("Hello, {}! My name is Levy ", name);
@@ -56,10 +57,3 @@ fn calculate(a: i32, b: i32) {
 }
 
 // display help
-fn display_help() {
-    println!("Levy Help:");
-    println!("Commands:");
-    println!("  help    display this help message");
-    println!("  greet --name <NAME> greeting users");
-    println!("  calculate --a <NUM> --b <NUM>   Two Number Substitution Operation");
-}
