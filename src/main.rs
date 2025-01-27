@@ -24,6 +24,9 @@ enum Commands {
         #[arg(short, long)]
         b: i32,
     },
+
+    // display help
+    Help,
 }
 
 fn main() {
@@ -36,6 +39,9 @@ fn main() {
         Commands::Calculate { a, b } => {
             calculate(a, b);
         }
+        Commands::Help => {
+            display_help();
+        }
     }
 }
 
@@ -47,4 +53,13 @@ fn greet(name: &str) {
 /// calculate function
 fn calculate(a: i32, b: i32) {
     println!("The sum of {} and {} is {}.", a, b, a + b);
+}
+
+// display help
+fn display_help() {
+    println!("Levy Help:");
+    println!("Commands:");
+    println!("  help    display this help message");
+    println!("  greet --name <NAME> greeting user");
+    println!("  calculate --a <NUM> --b <NUM>   Two Number Substitution Operation");
 }
