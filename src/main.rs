@@ -44,7 +44,8 @@ fn main() {
 }
 
 fn who() {
-    println!("Hi there! My Name Is Levy, I Am a CLI Tool 👌");
+    println!("Yo! 🙌 You're using the Levy is made for fun 😎. Make your life easier, cooler, and more efficient! 🚀 Just type in a command, and let this tool help you speed things up! 💻🔥
+ @mayendradwika");
 }
 /// greeting function
 fn greet(name: &str) {
@@ -55,5 +56,3 @@ fn greet(name: &str) {
 fn calculate(a: i32, b: i32) {
     println!("The sum of {} and {} is {}.", a, b, a + b);
 }
-
-// display help
