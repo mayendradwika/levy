@@ -9,6 +9,8 @@ struct Cli {
 
 #[derive(Subcommand)]
 enum Commands {
+    /// Who made this?
+    Author,
     /// Who Am I
     Who,
     /// Greeting user
@@ -41,7 +43,14 @@ fn main() {
         Commands::Who => {
             who();
         }
+        Commands::Author => {
+            author();
+        }
     }
+}
+
+fn author() {
+    println!("Made by @mayendradwika 😎. Please visit https://github.com/mayendradwika/levy ");
 }
 
 fn who() {
