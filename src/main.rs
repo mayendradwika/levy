@@ -44,8 +44,7 @@ fn main() {
 }
 
 fn who() {
-    println!("Yo! 🙌 You're using the Levy is made for fun 😎. Make your life easier, cooler, and more efficient! 🚀 Just type in a command, and let this tool help you speed things up! 💻🔥
- @mayendradwika");
+    println!("Hey there! 🤙 I'm Levy 😁, and this CLI tool’s here to level up your life! 🚀 [@mayendradwika]");
 }
 /// greeting function
 fn greet(name: &str) {
