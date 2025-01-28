@@ -13,7 +13,7 @@ enum Commands {
     Author,
     /// Who Am I
     Who,
-    /// Greeting user
+    /// Say Your Name
     Greet {
         /// name
         #[arg(short, long)]
