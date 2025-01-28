@@ -1,7 +1,7 @@
 use clap::{Parser, Subcommand};
 
 #[derive(Parser)]
-#[command(name = "levy", version = "1.0", about = "Simple ClI Tool to help you")]
+#[command(name = "levy", version = "1.0", about = "CLI tool to level up your life! 🚀")]
 struct Cli {
     #[command(subcommand)]
     command: Commands,
@@ -9,6 +9,7 @@ struct Cli {
 
 #[derive(Subcommand)]
 enum Commands {
+    /// Who Am I
     Who,
     /// Greeting user
     Greet {
@@ -16,7 +17,7 @@ enum Commands {
         #[arg(short, long)]
         name: String,
     },
-    /// calculate
+    /// Calculate
     Calculate {
         /// first number
         #[arg(short, long)]
