@@ -1,7 +1,8 @@
 use clap::{Parser, Subcommand};
+mod commands;
 
 #[derive(Parser)]
-#[command(name = "levy", version = "1.0", about = "CLI tool to level up your life! 🚀")]
+#[command(name = "levy", version = "1.0", about = "Levy CLI - A simple tool for basic tasks")]
 struct Cli {
     #[command(subcommand)]
     command: Commands,
@@ -9,59 +10,94 @@ struct Cli {
 
 #[derive(Subcommand)]
 enum Commands {
-    /// Who made this?
-    Author,
-    /// Who Am I
+    /// Who am i?
     Who,
-    /// Say Your Name
+    /// Greet a user with a specific name
     Greet {
-        /// name
-        #[arg(short, long)]
+        /// Name of the user to greet
+        #[arg(short, long, required = true)]
         name: String,
     },
-    /// Calculate
+    /// Perform a simple addition operation
     Calculate {
-        /// first number
+        /// First number
         #[arg(short, long)]
         a: i32,
-        /// second number
+        /// Second number
         #[arg(short, long)]
         b: i32,
     },
+    /// Perform a simple multiplication operation
+    Multiply {
+        /// First number
+        #[arg(short, long)]
+        a: i32,
+        /// Second number
+        #[arg(short, long)]
+        b: i32,
+    },
+    /// Perform a simple subtraction operation
+    Subtract {
+        /// First number
+        #[arg(short, long)]
+        a: i32,
+        /// Second number
+        #[arg(short, long)]
+        b: i32,
+    },
+    /// Perform a simple division operation
+    Divide {
+        /// First number
+        #[arg(short, long)]
+        a: i32,
+        /// Second number
+        #[arg(short, long)]
+        b: i32,
+    },
+    #[command(external_subcommand)]
+    Fallback(Vec<String>),
 }
 
 fn main() {
-    let cli = Cli::parse();
-
-    match cli.command {
-        Commands::Greet { name } => {
-            greet(&name);
-        }
-        Commands::Calculate { a, b } => {
-            calculate(a, b);
-        }
-        Commands::Who => {
-            who();
-        }
-        Commands::Author => {
-            author();
-        }
+    if let Err(e) = run() {
+        eprintln!("Error: {}", e);
+        std::process::exit(1);
     }
 }
 
-fn author() {
-    println!("Made by @mayendradwika 😎. Please visit https://github.com/mayendradwika/levy ");
-}
+fn run() -> Result<(), String> {
+    let cli = Cli::parse();
 
-fn who() {
-    println!("Hey there! 🤙 I'm Levy 😁, and this CLI tool’s here to level up your life! 🚀 [@mayendradwika]");
-}
-/// greeting function
-fn greet(name: &str) {
-    println!("Hello, {}! My name is Levy ", name);
-}
+    match cli.command {
+        Commands::Who => {
+            println!("Levy CLI - Your buddy for handling basic tasks.");
+            println!("Need help? Try `levy --help`.");
+        }
 
-/// calculate function
-fn calculate(a: i32, b: i32) {
-    println!("The sum of {} and {} is {}.", a, b, a + b);
+        Commands::Greet { name } => {
+            if name.trim().is_empty() {
+                return Err("Name cannot be empty. Use: levy greet --name <NAME>".into());
+            }
+            commands::greet(&name);
+        }
+        Commands::Calculate { a, b } => {
+            commands::calculate(a, b);
+        }
+        Commands::Multiply { a, b } => {
+            commands::multiply(a, b);
+        }
+        Commands::Subtract { a, b } => {
+            commands::subtract(a, b);
+        }
+        Commands::Divide { a, b } => {
+            commands::divide(a, b)?;
+        }
+        Commands::Fallback(cmd) => {
+            return Err(format!(
+                "Unknown command '{}'. Use `levy --help` to see available commands.",
+                cmd.join(" ")
+            ));
+        }
+    }
+    Ok(())
 }
