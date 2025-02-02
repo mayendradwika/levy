@@ -1,4 +1,4 @@
-
+use chrono::Local;
 
 /// greeting users
 pub fn greet(name: &str) {
@@ -27,4 +27,10 @@ pub fn divide(a:i32, b:i32) -> Result<(), String> {
     }
     println!("The division of {} by {} is {}.", a, b, a/b);
     Ok(())
+}
+
+/// func to get time
+pub fn show_time() {
+    let now = Local::now();
+    println!("Yo, it's {} have u done it?🕒", now.format("%H:%M"));
 }

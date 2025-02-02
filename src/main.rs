@@ -1,4 +1,6 @@
 use clap::{Parser, Subcommand};
+use crate::commands::show_time;
+
 mod commands;
 
 #[derive(Parser)]
@@ -20,6 +22,8 @@ enum Commands {
     },
     /// Who made this?
     Author,
+    /// What time is it?
+    Time,
     /// Perform a simple addition operation
     Calculate {
         /// First number
@@ -89,6 +93,9 @@ fn run() -> Result<(), String> {
             println!("Status: Online");
             println!("IP: [Redacted]");
             println!("There's always a way in....🤙");
+        }
+        Commands::Time => {
+            show_time();
         }
         Commands::Calculate { a, b } => {
             commands::calculate(a, b);
