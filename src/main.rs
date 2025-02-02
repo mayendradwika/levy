@@ -70,8 +70,9 @@ fn run() -> Result<(), String> {
 
     match cli.command {
         Commands::Who => {
-            println!("Levy CLI - Your buddy for handling basic tasks.");
-            println!("Need help? Try `levy --help`.");
+            println!("Yo! I'm Levy CLI, your go-to homie for basic tasks. 🚀");
+            println!("I can crunch numbers, say hi, and do other cool stuff.");
+            println!("Stuck? Just hit me up with `levy --help`. You got this! 😎");
         }
 
         Commands::Greet { name } => {
