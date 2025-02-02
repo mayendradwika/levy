@@ -18,6 +18,8 @@ enum Commands {
         #[arg(short, long, required = true)]
         name: String,
     },
+    /// Who made this?
+    Author,
     /// Perform a simple addition operation
     Calculate {
         /// First number
@@ -70,7 +72,7 @@ fn run() -> Result<(), String> {
 
     match cli.command {
         Commands::Who => {
-            println!("Yo! I'm Levy CLI, your go-to homie for basic tasks. 🚀");
+            println!("Yo! I'm Levy CLI 🤙, your go-to homie for basic tasks. 🚀");
             println!("I can crunch numbers, say hi, and do other cool stuff.");
             println!("Stuck? Just hit me up with `levy --help`. You got this! 😎");
         }
@@ -80,6 +82,13 @@ fn run() -> Result<(), String> {
                 return Err("Name cannot be empty. Use: levy greet --name <NAME>".into());
             }
             commands::greet(&name);
+        }
+        Commands::Author => {
+            println!("Who made this?🙄");
+            println!("Github: [@mayendradwika]");
+            println!("Status: Online");
+            println!("IP: [Redacted]");
+            println!("There's always a way in....🤙");
         }
         Commands::Calculate { a, b } => {
             commands::calculate(a, b);

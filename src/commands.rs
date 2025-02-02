@@ -1,5 +1,4 @@
-use clap::builder::Str;
-use clap::builder::styling::Reset;
+
 
 /// greeting users
 pub fn greet(name: &str) {
