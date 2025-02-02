@@ -1,5 +1,5 @@
 use clap::{Parser, Subcommand};
-use crate::commands::show_time;
+
 
 mod commands;
 
@@ -95,7 +95,7 @@ fn run() -> Result<(), String> {
             println!("There's always a way in....🤙");
         }
         Commands::Time => {
-            show_time();
+            commands::show_time();
         }
         Commands::Calculate { a, b } => {
             commands::calculate(a, b);
