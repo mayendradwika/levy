@@ -47,6 +47,6 @@ pub fn get_emote() {
     let emotes = ["🔥","🚀","😂","💡","🎉","😎","🥳","🤖","💯","✨","🤣","🤬","😱","🥵","💩","🖕","🤙","🤑","💀","🎃","🥶","🤓","😛","🧐"];
     let mut rng = rand::rng();
     if let Some(emote) = emotes.choose(&mut rng) {
-        println!("{}", emote);
+        println!("your emote today {}", emote);
     }
 }
