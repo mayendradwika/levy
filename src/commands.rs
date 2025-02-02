@@ -44,7 +44,7 @@ pub fn show_date() {
 
 /// func to get random emote
 pub fn get_emote() {
-    let emotes = ["🔥", "🚀", "😂", "💡", "🎉", "😎", "🥳", "🤖", "💯", "✨", "🤣"];
+    let emotes = ["🔥","🚀","😂","💡","🎉","😎","🥳","🤖","💯","✨","🤣","🤬","😱","🥵","💩","🖕","🤙","🤑","💀","🎃"];
     let mut rng = rand::rng();
     if let Some(emote) = emotes.choose(&mut rng) {
         println!("{}", emote);
