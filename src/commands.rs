@@ -1,4 +1,5 @@
 use chrono::Local;
+use rand::seq::IndexedRandom;
 
 /// greeting users
 pub fn greet(name: &str) {
@@ -32,5 +33,20 @@ pub fn divide(a:i32, b:i32) -> Result<(), String> {
 /// func to get time
 pub fn show_time() {
     let now = Local::now();
-    println!("Yo, it's {} have u done it?🕒", now.format("%H:%M"));
+    println!("Yo, it's {} 🕒 have u done it?", now.format("%H:%M"));
+}
+
+/// func to get date
+pub fn show_date() {
+    let today = Local::now();
+    println!("Bro, today is {} 📅, how's goin on?", today.format("%d %B %Y"));
+}
+
+/// func to get random emote
+pub fn get_emote() {
+    let emotes = ["🔥", "🚀", "😂", "💡", "🎉", "😎", "🥳", "🤖", "💯", "✨", "🤣"];
+    let mut rng = rand::rng();
+    if let Some(emote) = emotes.choose(&mut rng) {
+        println!("{}", emote);
+    }
 }

@@ -24,6 +24,10 @@ enum Commands {
     Author,
     /// What time is it?
     Time,
+    /// What Date is it?
+    Date,
+    /// Generate a random emote
+    Emote,
     /// Perform a simple addition operation
     Calculate {
         /// First number
@@ -96,6 +100,12 @@ fn run() -> Result<(), String> {
         }
         Commands::Time => {
             commands::show_time();
+        }
+        Commands::Date => {
+            commands::show_date();
+        }
+        Commands::Emote => {
+            commands::get_emote();
         }
         Commands::Calculate { a, b } => {
             commands::calculate(a, b);
