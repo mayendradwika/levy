@@ -6,5 +6,6 @@ Levy is a simple CLI tool that offers various practical features for everyday ne
 Make sure you have Rust installed. If not, you can download it from rust-lang.org.
 Then, run the following command:
  ```sh
+   BLUE='\033[1;34m'
    cargo install --path .
    ```
