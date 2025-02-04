@@ -8,3 +8,5 @@ Then, run the following command:
  ```sh
    cargo install --path .
    ```
+
+## 🔧 Usage
