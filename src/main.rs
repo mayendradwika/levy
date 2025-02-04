@@ -28,6 +28,8 @@ enum Commands {
     Date,
     /// Generate a random emote
     Emote,
+    /// Glory, glory, Man United!
+    Manutd,
     /// Perform a simple addition operation
     Calculate {
         /// First number
@@ -106,6 +108,12 @@ fn run() -> Result<(), String> {
         }
         Commands::Emote => {
             commands::get_emote();
+        }
+        Commands::Manutd => {
+            println!("Glory, glory, Man United!");
+            println!("Glory, glory, Man United!");
+            println!("Glory, glory, Man United! ");
+            println!("As the Reds go marching on, on, on!🔥 🔥")
         }
         Commands::Calculate { a, b } => {
             commands::calculate(a, b);
