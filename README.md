@@ -10,3 +10,6 @@ Then, run the following command:
    ```
 
 ## 🔧 Usage
+```sh
+  levy who
+```
