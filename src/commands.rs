@@ -1,5 +1,6 @@
 use chrono::Local;
 use rand::seq::IndexedRandom;
+use std::num::ParseIntError;
 
 /// greeting users
 pub fn greet(name: &str) {
@@ -49,4 +50,24 @@ pub fn get_emote() {
     if let Some(emote) = emotes.choose(&mut rng) {
         println!("your emote today {}", emote);
     }
+}
+
+/// convert number
+pub fn detect_and_convert(input: &str) -> Result<(), ParseIntError> {
+    let num = if input.starts_with("0x") {
+        i64::from_str_radix(&input[2..], 16)? // Heksadesimal
+    } else if input.starts_with("0") && input.len() > 1 {
+        i64::from_str_radix(&input[1..], 8)? // Oktal
+    } else if input.chars().all(|c| c == '0' || c == '1') {
+        i64::from_str_radix(input, 2)? // Biner
+    } else {
+        input.parse::<i64>()? // Desimal
+    };
+
+    println!("Binary:  {:b}", num);
+    println!("Hex:     {:X}", num);
+    println!("Octal:   {:o}", num);
+    println!("Decimal: {}", num);
+
+    Ok(())
 }

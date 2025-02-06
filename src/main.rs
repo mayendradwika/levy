@@ -30,6 +30,8 @@ enum Commands {
     Emote,
     /// Glory, glory, Man United!
     Manutd,
+    /// Convert Number
+    Convert{number: String},
     /// Perform a simple addition operation
     Calculate {
         /// First number
@@ -114,6 +116,9 @@ fn run() -> Result<(), String> {
             println!("Glory, glory, Man United!");
             println!("Glory, glory, Man United! ");
             println!("As the Reds go marching on, on, on!🔥 🔥")
+        }
+        Commands::Convert {number} => {
+            commands::detect_and_convert(&number);
         }
         Commands::Calculate { a, b } => {
             commands::calculate(a, b);
