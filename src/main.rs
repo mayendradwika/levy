@@ -118,7 +118,7 @@ fn run() -> Result<(), String> {
             println!("As the Reds go marching on, on, on!🔥 🔥")
         }
         Commands::Convert {number} => {
-            commands::detect_and_convert(&number);
+            commands::detect_and_convert(&number).expect("TODO: panic message");
         }
         Commands::Calculate { a, b } => {
             commands::calculate(a, b);
