@@ -1,3 +1,5 @@
+# On Going!!
+
 # Levy CLI
 
 Levy is a simple CLI tool that offers various practical features for everyday needs make for fun. This tool is built with Rust.
@@ -13,3 +15,6 @@ Then, run the following command:
 ```sh
   levy who
 ```
+
+
+## STILL BUILD IT.....
