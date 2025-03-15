@@ -13,9 +13,18 @@ Then, run the following command:
 ```sh
   levy who
 ```
-Output :
 ```sh
- Yo! I'm Levy CLI 🤙, your go-to homie for basic tasks. 🚀
+  Yo! I'm Levy CLI 🤙, your go-to homie for basic tasks. 🚀
 I can crunch numbers, say hi, and do other cool stuff.
 Stuck? Just hit me up with `levy --help`. You got this! 😎
+```
+
+```sh
+  levy manutd
+```
+```sh
+ Glory, glory, Man United!
+Glory, glory, Man United!
+Glory, glory, Man United!
+As the Reds go marching on, on, on! 🔥🔥
 ```
