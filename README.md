@@ -13,6 +13,9 @@ Then, run the following command:
 ```sh
   levy who
 ```
-
-
-## STILL BUILD IT.....
+Output :
+```sh
+ Yo! I'm Levy CLI 🤙, your go-to homie for basic tasks. 🚀
+I can crunch numbers, say hi, and do other cool stuff.
+Stuck? Just hit me up with `levy --help`. You got this! 😎
+```
