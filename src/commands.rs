@@ -25,7 +25,7 @@ pub fn subtract(a:i32, b:i32) {
 /// func to do division
 pub fn divide(a:i32, b:i32) -> Result<(), String> {
     if b == 0 {
-        return Err("Divide by zero is not allowed".into());
+        return Err(" Opps!!, divide by zero is not allowed".into());
     }
     println!("The division of {} by {} is {}.", a, b, a/b);
     Ok(())
