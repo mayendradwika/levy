@@ -23,8 +23,13 @@ Stuck? Just hit me up with `levy --help`. You got this! 😎
   levy manutd
 ```
 ```sh
- Glory, glory, Man United!
+Glory, glory, Man United!
 Glory, glory, Man United!
 Glory, glory, Man United!
 As the Reds go marching on, on, on! 🔥🔥
+```
+
+dont forget to type 
+```sh
+ levy --help
 ```
