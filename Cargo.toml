@@ -6,6 +6,8 @@ edition = "2021"
 description = "Simple CLI to Basic Fitur"
 repository = "https://github.com/mayendra/levy"
 license = "MIT"
+keywords = ["cli","utillity","converter"]
+categories = ["command-line-utilities"]
 
 [dependencies]
 chrono = "0.4.39"
