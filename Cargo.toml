@@ -4,6 +4,7 @@ version = "0.1.1"
 authors = ["mayendradwika <mayendradwikaprayudha@gmail.com>"]
 edition = "2021"
 description = "Simple CLI to Basic Fitur"
+readme = "README.md"
 repository = "https://github.com/mayendradwika/levy"
 license = "MIT"
 keywords = ["cli","utillity","converter"]
