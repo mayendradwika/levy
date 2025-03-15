@@ -1,6 +1,6 @@
 [package]
 name = "levy"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["mayendradwika <mayendradwikaprayudha@gmail.com>"]
 edition = "2021"
 description = "Simple CLI to Basic Fitur"
