@@ -1,5 +1,5 @@
 [package]
-name = "levy"
+name = "levy-cli"
 version = "0.1.1"
 authors = ["mayendradwika <mayendradwikaprayudha@gmail.com>"]
 edition = "2021"
