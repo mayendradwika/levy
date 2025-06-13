@@ -91,7 +91,7 @@ fn run() -> Result<(), String> {
 
         Commands::Greet { name } => {
             if name.trim().is_empty() {
-                return Err("Name cannot be empty. Use: levy greet --name <NAME>".into());
+                return Err("Name cannot be empty. Use: levy greet --name <YourName>".into());
             }
             commands::greet(&name);
         }
